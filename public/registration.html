@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="static/css/bootstrap.css" rel="stylesheet" >
+    <link rel="stylesheet" href="question.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand fs-2 fw-bold" href="#">AskPupkin</a>
+            
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Ask!</button>
+            </form>
+
+            <div class="d-flex gap-2 align-items-center">
+                <div style="width: 50px; height: 50px;">
+                    <img src="static/img/image.jpg" class="img-thumbnail rounded-circle w-100 h-100" alt="...">
+                </div>
+                <div class="content">
+                    <div class="content__name">Dr. Pepper</div>
+                    <div class="content__links">
+                        <a href="#">Settings</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </nav>
+
+    <main class="container mt-3">
+        <div class="row">
+            <section class="col vh-100">
+                <article class="d-flex gap-3 flex-column">
+                    <h1>Registration</h1>
+                    <div class="row align-items-center">
+                        <label class="col-2">Login</label>
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Enter your login here..." value="dr_pepper">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="email" class="col-2 mt-2">Email</label>
+                        <div class="col">
+                            <input class="form-control is-invalid" value="dr.pepper@mail.ru" type="email" id="email" aria-describedby="emailFeedback" required placeholder="Enter your email here...">
+                            <div id="emailFeedback" class="invalid-feedback">
+                                Sorry, this email adress is already registred!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <label class="col-2">NickName</label>
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Enter your NickName here..." value="Dr. Pepper">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="password" class="col-2 mt-2">Password</label>
+                        <div class="col">
+                            <input class="form-control is-valid" value="mypassword" type="password" id="password" aria-describedby="passwordFeedback" required placeholder="Enter your password here...">
+                            <div id="passwordFeedback" class="invalid-feedback">
+                                Sorry, wrong password
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="password" class="col-2 mt-2">Repeat password</label>
+                        <div class="col">
+                            <input class="form-control is-valid" value="mypassword" type="password" id="password" aria-describedby="passwordFeedback" required placeholder="Enter your password here...">
+                            <div id="passwordFeedback" class="invalid-feedback">
+                                Sorry, wrong password
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <label class="col-2">Upload avatar</label>
+                        <div class="col">
+                            <input class="form-control" type="file">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col offset-2">
+                            <button class="btn btn-primary">Register!</button>
+                        </div>
+                        
+                    </div>
+                </article>
+            </section>
+        
+            <aside class="col-3">
+                <section class="mb-3">
+                    <h3>Popular tags</h3>
+                    <div>
+                        <span class="badge text-bg-primary">moon</span>
+                        <span class="badge text-bg-secondary">bender</span>
+                        <span class="badge text-bg-success">lunar</span>
+                        <span class="badge text-bg-danger">space</span>
+                        <span class="badge text-bg-warning">domes</span>
+                        <span class="badge text-bg-info">regolith</span>
+                        <span class="badge text-bg-light">light</span>
+                        <span class="badge text-bg-dark">dark</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Best members</h3>
+                    <div>
+                        <a class="d-block" href="#">MoonWalker</a>
+                        <a class="d-block" href="#">LunarEngineer</a>
+                        <a class="d-block" href="#">AstroPupkin</a>
+                        <a class="d-block" href="#">BaseBuilder</a>
+                        <a class="d-block" href="#">RocketQueen</a>
+                        <a class="d-block" href="#">Helium3</a>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>

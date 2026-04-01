@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="static/css/bootstrap.css" rel="stylesheet" >
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand fs-2 fw-bold" href="#">AskPupkin</a>
+            
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Ask!</button>
+            </form>
+
+            <div class="d-flex gap-2 align-items-center">
+                <div style="width: 50px; height: 50px;">
+                    <img src="static/img/image.jpg" class="img-thumbnail rounded-circle w-100 h-100" alt="...">
+                </div>
+                <div class="content">
+                    <div class="content__name">Dr. Pepper</div>
+                    <div class="content__links">
+                        <a href="#">Settings</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </nav>
+
+    <main class="container mt-2">
+        <div class="row">
+            <section class="col vh-100">
+                <div class="d-flex gap-2 align-items-center mb-4">
+                    <h1>New Questions</h1>
+                    <a href="#">Hot Questions</a>
+                </div>
+
+                <article class="d-flex gap-3 flex-column">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="static/img/image.jpg" class="img-fluid border mb-2 w-100" alt="...">
+                                    <div>
+                                        <input type="number" class="form-control" value="5">
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-between">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#">Answers (3)</a>
+                                        </div>
+                                        <div class="col">
+                                            <span>Tags:</span>
+                                            <span class="badge text-bg-primary">moon</span>
+                                            <span class="badge text-bg-secondary">bender</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <small class="text-muted">asked 1 hour ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="static/img/image.jpg" class="img-fluid border mb-2 w-100" alt="...">
+                                    <div>
+                                        <input type="number" class="form-control" value="5">
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-between">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#">Answers (3)</a>
+                                        </div>
+                                        <div class="col">
+                                            <span>Tags:</span>
+                                            <span class="badge text-bg-primary">moon</span>
+                                            <span class="badge text-bg-secondary">bender</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <small class="text-muted">asked 2 hours ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="static/img/image.jpg" class="img-fluid border mb-2 w-100" alt="...">
+                                    <div>
+                                        <input type="number" class="form-control" value="5">
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-between">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#">Answers (3)</a>
+                                        </div>
+                                        <div class="col">
+                                            <span>Tags:</span>
+                                            <span class="badge text-bg-primary">moon</span>
+                                            <span class="badge text-bg-secondary">bender</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <small class="text-muted">asked 3 hours ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
+
+                </article>
+
+
+            </section>
+        
+            <aside class="col-3">
+                <section class="mb-3">
+                    <h3>Popular tags</h3>
+                    <div>
+                        <span class="badge text-bg-primary">moon</span>
+                        <span class="badge text-bg-secondary">bender</span>
+                        <span class="badge text-bg-success">lunar</span>
+                        <span class="badge text-bg-danger">space</span>
+                        <span class="badge text-bg-warning">domes</span>
+                        <span class="badge text-bg-info">regolith</span>
+                        <span class="badge text-bg-light">light</span>
+                        <span class="badge text-bg-dark">dark</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Best members</h3>
+                    <div>
+                        <a class="d-block" href="#">MoonWalker</a>
+                        <a class="d-block" href="#">LunarEngineer</a>
+                        <a class="d-block" href="#">AstroPupkin</a>
+                        <a class="d-block" href="#">BaseBuilder</a>
+                        <a class="d-block" href="#">RocketQueen</a>
+                        <a class="d-block" href="#">Helium3</a>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>
