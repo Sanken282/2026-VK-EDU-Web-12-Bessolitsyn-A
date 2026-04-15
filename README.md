@@ -24,3 +24,4 @@ public/
    img/
 .gitignore
 README.md
+
