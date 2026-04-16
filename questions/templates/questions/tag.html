@@ -1,0 +1,11 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Tag: {{ tag }}</h1>
+    {% for question in questions %}
+        {% include 'questions/partials/question.html' %}
+    {% endfor %}
+
+    {% include 'questions/partials/pagination.html' %}
+{% endblock %}

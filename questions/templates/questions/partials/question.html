@@ -1,0 +1,38 @@
+{% load static %}
+<div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 mb-3 mb-md-0">
+                    <div class="d-flex d-md-block align-items-center gap-3">
+                        <div class="flex-shrink-0" style="width: 100px; max-width: 100%;">
+                            <img src="{% static 'questions/img/image.jpg' %}" class="img-fluid mb-2 border w-100" alt="...">
+                        </div>
+                        <div class="flex-grow-1">
+                            <input type="number" class="form-control" value="{{ question.rating }}" style="max-width: 100px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-column justify-content-between overflow-hidden">
+                    <h5 class="card-title text-truncate w-100">{{ question.title }}</h5>
+                    <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+                        {{ question.text }}
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#">Answers {{ question.answers_count }}</a>
+                        </div>
+                        <div class="col">
+                            <span>Tags:</span>
+                            {% for tag in question.tags %}
+                            <a href="{% url 'questions:tag' tag %}" class="badge text-bg-primary text-decoration-none">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="col-auto">
+                            <small class="text-muted">asked {{ question.time }} hours ago</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
