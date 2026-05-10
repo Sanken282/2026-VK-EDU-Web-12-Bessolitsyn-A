@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="{% static 'questions/css/bootstrap.css' %}" rel="stylesheet" >
+    <link href="{% static 'questions/css/bootstrap.min.css' %}" rel="stylesheet" >
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -16,8 +16,7 @@
                 <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"/>
             </form>
 
-            <button class="btn btn-outline-success" onclick="location.href='{% url 'questions:ask' %}'" type="button">Ask!</button>
-
+            <a href="{% url 'questions:ask' %}" class="btn btn-outline-success">Ask!</a>
             <div class="d-flex gap-2 align-items-center">
                 <a href="{% url 'core:profile' %}" style="width: 50px; height: 50px; text-decoration: none;">
                     <img src="{% static 'questions/img/image.jpg' %}" class="img-thumbnail rounded-circle w-100 h-100" alt="avatar">
@@ -82,6 +81,6 @@
             <span class="text-muted">© 2026 AskPupkin. Все права защищены.</span>
         </div>
     </footer>
-    <script src="{% static 'questions/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'questions/js/bootstrap.min.js' %}"></script>
   </body>
 </html>

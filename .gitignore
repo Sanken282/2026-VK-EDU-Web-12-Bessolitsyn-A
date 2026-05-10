@@ -23,6 +23,13 @@ db.sqlite3
 media/
 /static/
 
+# Docker
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+
+
 # Dependencies
 node_modules/
 venv/

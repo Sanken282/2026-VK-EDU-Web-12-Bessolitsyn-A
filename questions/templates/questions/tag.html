@@ -7,5 +7,7 @@
         {% include 'questions/partials/question.html' %}
     {% endfor %}
 
-    {% include 'questions/partials/pagination.html' %}
+    {% if questions %}
+        {% include 'questions/partials/pagination.html' %}
+    {% endif %}
 {% endblock %}
