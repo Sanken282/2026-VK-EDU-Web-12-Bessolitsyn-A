@@ -1,0 +1,34 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Log In</h1>
+<div id="generalError" class="alert alert-danger d-none" role="alert">
+    Invalid login or password
+</div>
+<div class="row align-items-center">
+    <label class="col-2">Login</label>
+    <div class="col">
+        <input class="form-control" type="text" id="login" placeholder="Enter your login" required>
+        <div id="loginFeedback" class="invalid-feedback">Please enter your login</div>
+    </div>
+</div>
+
+<div class="row">
+    <label for="password" class="col-2 mt-2">Password</label>
+    <div class="col">
+            <input class="form-control" type="password" id="password" placeholder="Enter your password" required>
+        <div id="passwordFeedback" class="invalid-feedback">Please enter your password</div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col offset-2">
+        <button class="btn btn-primary">Log in!</button>
+    </div>
+
+</div>
+<div class="col offset-2">
+    <a href="{% url 'core:signup' %}">create new account</a>
+</div>
+
+{% endblock %}

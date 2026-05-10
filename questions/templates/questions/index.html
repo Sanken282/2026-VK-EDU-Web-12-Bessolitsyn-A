@@ -1,0 +1,19 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="d-flex gap-2 align-items-center mb-4">
+    <h1>New Questions</h1>
+    <a href="{%url 'questions:hot'%}">Hot Questions</a>
+</div>
+
+<article class="d-flex gap-3 flex-column">
+    {% for question in questions %}
+    {% include 'questions/partials/question.html' %}
+    {% endfor %}
+
+{% include 'questions/partials/pagination.html' %}
+
+</article>
+
+{% endblock %}

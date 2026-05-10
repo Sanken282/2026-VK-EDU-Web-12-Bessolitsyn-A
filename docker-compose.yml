@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: django_edu_web
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app  # Монтируем текущую директорию, чтобы изменения отражались сразу
+      - /app/__pycache__  # Игнорируем __pycache__
+      - ./media:/app/media  # Сохраняем медиа-файлы на хосте
+      - ./static:/app/static  # Сохраняем статику на хосте
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
