@@ -1,0 +1,90 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="card border-0">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 mb-3 mb-md-0">
+                <div class="d-flex d-md-block align-items-center gap-3">
+                    <div class="flex-shrink-0" style="width: 100px; max-width: 100%;">
+                        <img src="{% static 'questions/img/image.jpg' %}" class="img-fluid mb-2 border w-100" alt="...">
+                    </div>
+                    <div class="flex-grow-1">
+                        <input type="number" class="form-control" value="{{ question.rating }}" style="max-width: 100px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex flex-column justify-content-between ">
+                <h3 class="card-title">{{ question.title }}</h3>
+                <p class="card-text">{{ question.text }}</p>
+                <div class="row">
+                    <div class="col">
+                        <span>Tags:</span>
+                        {% for tag in question.tags.all %}
+                            <a href="{% url 'questions:tag' tag.name %}" class="badge text-bg-primary text-decoration-none">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="col-auto">
+                        <small class="text-muted">asked by {{ question.author.username }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="border-2">
+
+{% if answers %}
+    {% for answer in answers %}
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 mb-3 mb-md-0">
+                    <div class="d-flex d-md-block align-items-center gap-3">
+                        <div class="flex-shrink-0" style="width: 70px; max-width: 100%;">
+                            <img src="{% static 'questions/img/image.jpg' %}" class="img-fluid mb-2 border w-100" alt="...">
+                        </div>
+                        <div class="flex-grow-1">
+                            <input type="number" class="form-control" value="{{ answer.rating }}" style="max-width: 70px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-column justify-content-between">
+                    <p>{{ answer.text }}</p>
+                    <div class="row">
+                        <div class="col">
+                            {% if not answer.is_correct %}
+                                <button class="btn btn-success rounded-pill">Correct!</button>
+                            {% endif %}
+                        </div>
+                        <div class="col-auto">
+                            <small class="text-muted">answered by {{ answer.author.username }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% include 'questions/partials/pagination.html' %}
+{% else %}
+    <div class="alert alert-info">
+        <p>Пока нет ни одного ответа к этому вопросу.</p>
+    </div>
+{% endif %}
+
+<hr class="border-2">
+
+<div class="card mb-4">
+    <div class="card-body">
+    <h6>Your answer</h6>
+    <textarea class="form-control mb-2" rows="3" placeholder="Enter your answer here..."></textarea>
+    <button class="btn btn-primary">Answer</button>
+    </div>
+</div>
+
+{% endblock %}

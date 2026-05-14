@@ -1,0 +1,73 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Registration</h1>
+<div class="row align-items-center">
+    <label class="col-2">Login</label>
+    <div class="col">
+        <input class="form-control is-invalid" type="text" placeholder="Enter your login here..." value="dr_pepper">
+        <div class="invalid-feedback">
+            This login is already taken
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label for="email" class="col-2 mt-2">Email</label>
+    <div class="col">
+        <input class="form-control is-invalid" value="dr.pepper@mail.ru" type="email" id="email" aria-describedby="emailFeedback" required placeholder="Enter your email here...">
+        <div id="emailFeedback" class="invalid-feedback">
+            Sorry, this email adress is already registred!
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <label class="col-2">NickName</label>
+    <div class="col">
+        <input class="form-control is-invalid" type="text" placeholder="Enter your NickName here..." value="Dr. Pepper">
+        <div class="invalid-feedback">
+            This nickname is already taken
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label for="password" class="col-2 mt-2">Password</label>
+    <div class="col">
+        <input class="form-control is-invalid" value="weak" type="password" id="password" required placeholder="Enter your password here...">
+        <div class="invalid-feedback">
+            Password must be at least 8 characters long
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label for="repeatPassword" class="col-2 mt-2">Repeat password</label>
+    <div class="col">
+        <input class="form-control is-invalid" value="password" type="password" id="repeatPassword" required placeholder="Repeat your password here...">
+        <div class="invalid-feedback">
+            Passwords do not match
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <label class="col-2">Upload avatar</label>
+    <div class="col">
+        <input class="form-control is-invalid" type="file">
+        <div class="invalid-feedback">
+            File size exceeds 5MB limit
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col offset-2">
+        <button class="btn btn-primary">Register!</button>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Profile: Dr. Pepper</h1>
+<div class="row align-items-center">
+    <label class="col-2">Login</label>
+    <div class="col">
+        <input class="form-control" type="text" placeholder="Enter your login here..." value="dr_pepper">
+        <div class="invalid-feedback">
+            This login is already taken
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label for="email" class="col-2 mt-2">Email</label>
+    <div class="col">
+        <input class="form-control" value="dr.pepper@mail.ru" type="email" id="email" aria-describedby="emailFeedback" required placeholder="Enter your email here...">
+        <div id="emailFeedback" class="invalid-feedback">
+            Sorry, this email adress is already registred!
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <label class="col-2">NickName</label>
+    <div class="col">
+        <input class="form-control" type="text" placeholder="Enter your NickName here..." value="Dr. Pepper">
+        <div class="invalid-feedback">
+            This nickname is already taken
+        </div>
+    </div>
+</div>
+<div class="row mt">
+    <label class="col-2">Upload avatar</label>
+    <div class="col">
+        <div class="col-3">
+            <img src="{% static 'questions/img/image.jpg' %}" class="border mb-2 w-100" alt="...">
+        </div>
+        <input class="form-control" type="file">
+        <div class="invalid-feedback">
+            File size exceeds 5MB limit
+        </div>
+        <button class="btn btn-primary mt-3">Save</button>
+    </div>
+</div>
+{% endblock %}
