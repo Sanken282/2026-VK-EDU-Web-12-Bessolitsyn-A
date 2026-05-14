@@ -1,0 +1,17 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Tag: {{ tag }}</h1>
+
+    {% if questions %}
+        {% for question in questions %}
+            {% include 'questions/partials/question.html' %}
+        {% endfor %}
+        {% include 'questions/partials/pagination.html' %}
+    {% else %}
+        <div class="alert alert-info">
+            <p>Пока нет вопросов с тегом "{{ tag }}".</p>
+        </div>
+    {% endif %}
+{% endblock %}

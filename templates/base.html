@@ -1,0 +1,82 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="{% static 'questions/css/bootstrap.min.css' %}" rel="stylesheet" >
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand fs-2 fw-bold" href="{% url 'questions:index' %}">AskPupkin</a>
+            
+            <form class="d-flex w-50" role="search">
+                <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"/>
+            </form>
+
+            <a href="{% url 'questions:ask' %}" class="btn btn-outline-success">Ask!</a>
+            <div class="d-flex gap-2 align-items-center">
+                <a href="{% url 'core:profile' %}" style="width: 50px; height: 50px; text-decoration: none;">
+                    <img src="{% static 'questions/img/image.jpg' %}" class="img-thumbnail rounded-circle w-100 h-100" alt="avatar">
+                </a>
+                <div class="content">
+                    <div class="content__name">
+                        <a href="{% url 'core:profile' %}" style="text-decoration: none; color: inherit;">Dr. Pepper</a>
+                    </div>
+                    <div class="content__links">
+                        <a href="{% url 'core:settings' %}">Settings</a>
+                        <a href="{% url 'core:login' %}">Log out</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </nav>
+
+    <main class="container mt-3">
+        <div class="row">
+            <section class="col col-9 min-vh-100">
+                <article class="d-flex gap-3 flex-column">
+                    {% block content %}
+                    {% endblock %}
+                </article>
+            </section>
+        
+            <aside class="col-3">
+                <section class="mb-3">
+                    <h3>Popular tags</h3>
+                    <div class="align-items-center">
+                        {% for tag in popular_tags %}
+                            <a href="{% url 'questions:tag' tag.name %}" class="badge text-bg-primary text-truncate text-decoration-none" style="max-width: 100px; vertical-align: middle;">
+                                {{ tag.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Best members</h3>
+                    <div>
+                        {% for member in best_members %}
+                            <a class="d-block" href="#">{{ member.username }}</a>
+                        {% empty %}
+                            <p>No members yet</p>
+                        {% endfor %}
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">© 2026 AskPupkin. Все права защищены.</span>
+        </div>
+    </footer>
+    <script src="{% static 'questions/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

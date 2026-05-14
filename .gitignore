@@ -17,11 +17,25 @@ __pycache__/
 *.sqlite3
 *.db
 
+# Django
+db.sqlite3
+media/
+/static/
+
+# Docker
+.pytest_cache/
+.coverage
+htmlcov/
+
+
 # Dependencies
 node_modules/
 venv/
+.venv/
 env/
 .env
+.env.local
+.env.docker
 .python-version
 
 # Project specific
